@@ -1,0 +1,276 @@
+// variable
+$colors:(
+    dominatOrange:#FF5E21,
+    dominatBlue:#202460,
+    Dark:#594F59,
+    White:#fff,
+    lightGray:#F3F3F3,
+    lightBlue:#D8F0F2
+);
+//mixin
+@mixin ornamentSquare{
+    display: inline-block;
+    background-color: map-get($colors, dominatOrange);
+    height: 15px;
+    width: 15px;
+    transform: rotate(45deg);
+    margin-right: 0.5rem;
+}
+@mixin element {
+    height: 80vh;
+}
+@mixin notMobile{
+    display:none;
+}
+@mixin font-Black{
+    h2{
+    position: relative;
+    font-weight: 900;
+    font-size: 2rem;
+    z-index: 1;}
+}
+.body{
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 62.5%;
+    padding: 0;
+}
+.nav {
+    display: none;
+}
+.logo{
+   font-family:'Alfa Slab One';
+   padding: 1rem;
+   font-size: 2rem;
+}
+.header{
+    @include element;
+    background: map-get($colors ,dominatBlue);
+    color: map-get($colors ,White);
+    position: relative;
+    h1{
+        font-size: 2rem;
+        position: absolute;
+        top: 30%;
+        padding-left: 20%;
+        padding-right: 20%;
+        text-align: center;
+    }
+    p{
+        color: map-get($colors,dominatOrange );
+        padding-top: 2rem;
+        font-size: 1rem ;
+        position: absolute;
+        top: 60%;
+        padding-left: 20%;
+        padding-right: 20%;
+        text-align: center;
+    }
+}
+.event{
+    @include element;
+    background: map-get($colors, lightGray);
+    color: map-get($colors , Dark);
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 20px;
+    overflow: hidden;
+    .event-text__wrapper{
+        position: relative;
+        padding: 1rem;
+        padding-top: 4rem;
+       grid-column-start: 1;
+       grid-column-end: 2;
+       grid-row-start:2;
+       grid-row-end: 3;
+    }
+    .event-image__wrapper{
+
+        overflow:hidden;
+        position: absolute;
+        width: 80vw;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start:1;
+        grid-row-end: 2;
+    }
+    .image-event_1_1{
+        position: absolute;
+        left: -100px
+    }
+    .image-event_1_2{
+        @include notMobile;
+    }
+    .image-event_1_3{
+        @include notMobile;
+    }
+    h2{
+        font-size: 1rem;
+    }
+    span{
+        margin-top: 1rem;
+        color: map-get($colors, dominatOrange );
+    }
+    span::after{
+        content:" ";
+        display: block;
+        width:  205px;
+        height: 3px;
+        background: map-get($colors, dominatOrange );
+    }
+    P{
+       font-size: 1rem;
+    }
+    p::before{
+        content:" ";
+        display: inline-block;
+        background-color: map-get($colors, dominatOrange);
+        height: 15px;
+        width: 15px;
+        transform: rotate(45deg);
+        margin-right: 0.5rem;
+    }
+    // nie wiem jak zrobić nawigacje w samym css bez nadmiernych div
+    .nav{
+    display:none;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start:3;
+    grid-row-end: 4;
+    div{
+        margin-left: auto;
+        margin-right: auto;
+        height: 10px;
+        width: 10px;
+        border-radius: 5px;
+        background-color: map-get($colors, dominatBlue);
+    }
+    }
+}
+.project{
+
+    @include element;
+    background: map-get($colors ,dominatOrange);
+    text-align: center;
+    padding-top: 30%;
+    position: relative;
+    h1{
+        color: map-get($colors,White );
+        font-size: 3rem;
+        text-shadow: 12px 10px 0px #0080FF;
+    }
+    .project__wrapper{
+        position: relative;
+        margin-left: 20%;
+        margin-right: 20%;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        background-color: map-get($colors,White );
+        @include  font-Black;
+        div div{
+            position: absolute;
+            z-index: 0;
+            display: block;
+            height: 20px;
+            width: 80px;
+
+        }
+        .project-Sport{
+            background: #F2D544;
+            top: 40px;
+            left: 40px;
+        }
+        .project-Edukacja{
+            background: #D8F0F2;
+            width: 120px;
+            top: 120px;
+            left: 40px;
+        }
+        .project-Kultura{
+            background:  #A1F250;
+            top: 190px;
+            left: 90px;
+        }
+    }
+    .project__conteiner{
+        position: absolute;
+        margin: 0 15% 0;
+        top: 240px;
+        width: 160px;
+        height: 40px;
+        background:white;
+    }
+    a{
+        font-size: 0.8rem;
+    }
+
+}
+.Article{
+    @include element;
+    position: relative;
+    p{
+        text-align: center;
+    }
+    h1{
+        text-align: right;
+        font-size: 2rem;
+        display: block;
+        font-weight: 900;
+        margin-bottom: 0;
+    }
+    h1::before{
+        content:"";
+        @include ornamentSquare;
+    }
+    h2{
+        text-align: right;
+        font-weight: 400;
+        margin-bottom:0;
+        margin-top: 0.2rem;
+    }
+    h2::after{
+        content:" ";
+        display: block;
+        height: 4px;
+        width: 100px;
+        background-color: map-get(colors, dominatBlue);
+    }
+    h3{
+        text-align: right;
+        font-weight:600;
+        font-size: 0.6rem;
+    }
+}
+.article1_1{
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 20px;
+ }
+.article-text__wrapper{
+    padding: 0 1rem 0 ;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    margin-right: 2rem;
+}
+
+.article__button{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    margin:  0 20% 0;
+}
+.article__image{
+    overflow: hidden;
+    margin: auto;
+    height: auto;
+    width: 90%;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
