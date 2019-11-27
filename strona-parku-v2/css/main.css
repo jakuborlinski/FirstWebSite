@@ -69,9 +69,8 @@
 }
 
 .event .event-image__wrapper {
-  overflow: hidden;
   position: absolute;
-  width: 80vw;
+  width: 100%;
   -ms-grid-column: 1;
       grid-column-start: 1;
   grid-column-end: 2;
@@ -82,7 +81,8 @@
 
 .event .image-event_1_1 {
   position: absolute;
-  left: -100px;
+  height: auto;
+  width: 100%;
 }
 
 .event .image-event_1_2 {
@@ -144,6 +144,7 @@
   background-color: #202460;
 }
 
+/*  projekt start */
 .project {
   height: 80vh;
   background: #FF5E21;
@@ -217,10 +218,15 @@
 .Article {
   height: 80vh;
   position: relative;
+  margin-bottom: 2rem;
 }
 
 .Article p {
+  padding: 1rem;
   text-align: center;
+  background-color: #D8F0F2;
+  margin: 1rem 6rem 1rem;
+  font-size: 1rem;
 }
 
 .Article h1 {
@@ -240,6 +246,8 @@
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   margin-right: 0.5rem;
+  position: relative;
+  top: -3px;
 }
 
 .Article h2 {
@@ -249,6 +257,15 @@
   margin-top: 0.2rem;
 }
 
+.Article h2::after {
+  content: " ";
+  display: block;
+  position: relative;
+  height: 4px;
+  width: 190px;
+  background-color: #FF5E21;
+  left: 120px;
+}
 
 .Article h3 {
   text-align: right;
@@ -283,7 +300,6 @@
   -ms-grid-row: 3;
       grid-row-start: 3;
   grid-row-end: 4;
-  margin: 0 20% 0;
 }
 
 .article__image {
@@ -297,5 +313,192 @@
   -ms-grid-row: 1;
       grid-row-start: 1;
   grid-row-end: 2;
+}
+
+.button {
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: white;
+  border-style: solid;
+  border-radius: 3rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  text-align: center;
+  margin: 0 8rem 0;
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  border-color: #FF5E21;
+}
+
+.Container-partnerzy {
+  padding-bottom: 2rem;
+  background-color: #F3F3F3;
+}
+
+.Container-partnerzy p {
+  padding-top: 2rem;
+  text-align: center;
+  font-weight: 900;
+  font-size: 1rem;
+}
+
+.Container-partnerzy img {
+  height: 1rem;
+  text-align: center;
+}
+
+.Container-partnerzy__wrapper {
+  text-align: center;
+  margin: 0 30% 0;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.Container-partnerzy__wrapper .image {
+  text-align: center;
+  padding: 1rem;
+}
+
+.Container-MetUs {
+  text-align: center;
+  padding: 15vh  0 15vh;
+  background-color: #202460;
+  color: #fff;
+}
+
+.Container-MetUs h1 {
+  font-weight: 900;
+  font-size: 2rem;
+}
+
+.Container-MetUs h3 {
+  position: relative;
+  font-weight: 600;
+}
+
+.Container-MetUs h3::after {
+  position: absolute;
+  content: "";
+  display: block;
+  height: 2px;
+  width: 75px;
+  left: 150px;
+  top: 20px;
+  background-color: #fff;
+}
+
+.Container-JoinUs {
+  text-align: center;
+  padding: 15vh  0 15vh;
+  background-color: #FF5E21;
+  color: #fff;
+}
+
+.Container-JoinUs h1 {
+  font-weight: 900;
+  font-size: 2rem;
+}
+
+.Container-JoinUs h3 {
+  position: relative;
+  font-weight: 600;
+}
+
+.Container-JoinUs h3::after {
+  position: absolute;
+  content: "";
+  display: block;
+  height: 2px;
+  width: 75px;
+  left: 150px;
+  top: 20px;
+  background-color: #fff;
+}
+
+/* footer */
+.footer__menu {
+  background-color: #202460;
+  color: #fff;
+}
+
+.footer__menu li {
+  padding-left: 0;
+  color: #fff;
+  list-style: none;
+  -webkit-text-decoration-style: none;
+          text-decoration-style: none;
+}
+
+.footer__menu a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.footer__wrapper__quote {
+  background-color: #fff;
+  margin-top: 0;
+  padding: 2rem 1rem 2rem;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #202460;
+}
+
+.footer-menu__main {
+  padding-left: 1rem;
+  padding-top: 2rem;
+}
+
+.footer-menu__main ul {
+  padding-left: 0;
+}
+
+.footer-menu__main-item {
+  padding-left: 1.4rem;
+  font-weight: 600;
+  font-size: 1.4rem;
+  padding-bottom: 1rem;
+}
+
+.footer-menu__submenu {
+  padding-top: 1rem;
+}
+
+.footer-menu__sub-item {
+  padding-left: 0;
+  font-weight: 400;
+  padding-bottom: 1rem;
+}
+
+.footer__address {
+  padding-left: 1rem;
+  font-size: 1rem;
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.75rem;
+}
+
+.street-address {
+  padding-top: 1rem;
+}
+
+.footer__wrapper__image {
+  overflow: hidden;
+  position: relative;
+}
+
+.footer__image {
+  padding-left: 0rem;
+  padding-top: 2rem;
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: auto;
 }
 /*# sourceMappingURL=main.css.map */
